@@ -4,4 +4,4 @@ Awesomeness
 
 About
 -----
-[Awesomeness](http://awesomenessapp.herokuapp.com/ "Home of the Awesomeness App") is written by Freddie Pettersson](https://github.com/FreddieBoi "FreddieBoi at github").
+[Awesomeness](http://awesomenessapp.herokuapp.com/ "Home of the Awesomeness App") is written by [Freddie Pettersson](https://github.com/FreddieBoi "FreddieBoi at github").
