@@ -1,3 +1,8 @@
+@mixin text-shadow {
+  text-shadow: 2px 2px 2px #000;
+  filter: dropshadow(color=#000, offx=1, offy=1);
+}
+
 #notice, #error, #alert {
   padding: 5px 8px;
   margin: 10px 0;
@@ -13,17 +18,17 @@
   border: solid 1px #C66;
 }
 
-body {
+html, body {
+  margin: 0 auto 0;
+  padding: 0;
   height: 100%;
   width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  background-color: #fff;
-  color: #333;
+  background-color: #373737;
+  color: #999;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  box-shadow: 0 0 100px #000;
 }
 
 p, ol, ul, td {
@@ -32,34 +37,46 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
+h2, h3, h4 {
+  @include text-shadow;
+  font-weight: bold;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
 
-a {
-  color: #333;
+a, a:visited {
+  @include text-shadow;
+  font-weight: bold;
+  color: #ff00ff;
+  text-decoration: none;
   &:hover {
-    color: #000;
+    color: #ff00ff;
+    text-decoration: underline;
   }
 }
     
 nav {
+  text-align: center;
   ul {
     margin: 0;
     padding: 0;
     li {
+      font-size: 15px;
       list-style-type: none;
       display: inline-block;
       padding: 0 20px 0;
     }
   }
-  padding-bottom: 20px;
+  padding: 10px 0 20px;
 }
 
 header {
   text-align: center;
+  height: 80px;
   background-image: -webkit-gradient(
     linear,
     left bottom,
@@ -70,20 +87,47 @@ header {
     color-stop(1, rgb(255,0,255))
   );
   padding: 10px 0px 10px;
-  margin: 0 0 10px;
   h1 {
+    @include text-shadow;
     color: #fff;
-    text-shadow: 0px 0px 10px #000;
-    filter: dropshadow(color=#000, offx=0, offy=0);
+    a, a:hover, a:visited {
+      color: #fff;
+      text-decoration: none;
+    }
+    font-size: 27px;
   }
   em {
-    color: #000;
+    @include text-shadow;
+    font-size: 15px;
+    color: #999;
     padding: 0 20px 0;
   }
 }
 
+section {
+  padding: 0 25px 0;
+}
+
 footer {
-  padding-top: 20px;
+  font-size: 13px;
+  text-align: center;
+  padding: 18px auto 0;
+  position: absolute;
+  width: 720px;
+  bottom: 0;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(0,0,0)),
+    color-stop(0.94, rgb(55,55,55)),
+    color-stop(0.96, rgb(0,0,0)),
+    color-stop(1, rgb(55,55,55))
+  );
+  a, a:visited {
+    color: #999;
+    font-weight: normal;
+  }
 }
 
 @import "pages.css.scss";
