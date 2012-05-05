@@ -25,7 +25,7 @@ gem 'jquery-rails'
 group :development do
   gem 'annotate', '2.4.1.beta1'
   # To use debugger
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'debugger'
 end
 
 group :test do
